@@ -1,0 +1,1605 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');/* yazı tipi  */
+/* index start */
+*{/*tüm sayfa için * kullanılır.*/
+    margin: 0;/* boşlukları sıfrıladık */
+}
+.index-body{
+    background-image: url('img/londonbeyaz.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;/* Resmi tüm ekrana sığdır */
+    margin: 0;
+    padding: 0; 
+}
+/* navbar start*/
+.navbar{/* navbara ulaşmak için */
+    background-color:rgb(111, 0, 255);
+    height: 60px;
+    position: fixed; /* Navbar'ı sayfanın en üstüne sabitle (Sayfa kaydırılsa bile kalır) */
+    top: 0;
+    top: 0;
+    left: 0;
+    width: 100%; /* Menünün tüm genişliği kaplamasını sağlar */
+    z-index: 1000; /* Diğer elementlerin üzerinde görünmesini sağlar */
+}
+.navbar-wrapper{
+    display: flex;/* İçerikleri yatayda hizalamak için Flexbox */
+    justify-content:space-between;/* menuyu ortalar */
+    align-items: center;/* dikeyde ortalar */
+    height: 100%;
+    padding: 0 50px;/* sağdan soldan boşluk bırakır */
+}
+.menu-list{
+    display: flex;/* yatayda ortalar */
+    list-style: none;/* baştaki nokta sembolunu siler */
+    column-gap: 30px;/* her bir butonun arasında boşluk bırakır */
+}
+.menu-list-item{
+    cursor: pointer;/* butonun üstüne gidildiğinde tıklama(el) işareti çıkar */
+}
+.menu-list-item:hover{
+    font-weight: bold;/* butonun üstüne gidildiğinde yazı kalınlaşır */
+}
+.menu-list-item a{
+    color:rgb(138, 24, 43) !important;/* link olunca renk bu olsun */
+    text-decoration: none;/* alttaki çizgiyi siler */
+}
+.menu-list-item.active{
+   font-weight: bold;/* ana sayfa(aktif sayfa) yazısını her zaman koyu görünmesi için */
+}
+.profile-container{
+    display: flex;
+    align-items: center;/* dikeyde hizalama */
+    column-gap: 5px;/* Profil fotosu ve metin arası boşluk */
+
+}
+.profile-picture{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;/*Resmin oranını bozmadan sığdır */ 
+    border-radius: 50%;/* Resmi tam yuvarlak yap */
+}
+.profile-text-container{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    line-height: 1;/* aynı hizada olsunlar */
+}
+.profile-text-container span{
+    color:rgb(138, 7, 29);
+}
+.profile-text-container a {
+    text-decoration: none; /* Altındaki çizgiyi kaldırır */
+    color: inherit; /* Rengini üst kapsayıcıdan (span) almasını sağlar */
+}
+.toggle-icon{
+    color: goldenrod;/* güneş/ay ikon rengi */
+}
+/* Hareket eden top */
+.toggle-ball{
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;/* kenarları yuvarlaklaştır */
+    cursor: pointer;
+    position: absolute;/* Toggle içinde serbest hareket etmesi için */ 
+    right: 1px;/* Başlangıç konumu */
+}
+.toggle{
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;/*  Topun (ball) hareket alanı */ 
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;/* köşelerden boşluk bıraksın */
+}
+.logo{
+    font-size: 30px;
+    color:rgb(205, 66, 175) ;
+}
+/* navbar end*/
+
+/* slogan start */
+.hero-section {
+    width: 100%;
+    height: 100vh; /* ekran yüksekliğinin %100'ü */
+    position: relative; /* bir butonu sağ sola kaydırmak için */
+    display: flex;
+    justify-content: center; /* YATAY ORTALAMA */
+    align-items: center; /*  DİKEY ORTALAMA */
+}
+.hero-text {
+    text-align: center; /* Sloganın kendi içindeki metni ortalar */
+    color: rgb(111, 0, 255); /* metnin rengi */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* gölgesini ayarlar */
+}
+.hero-text h1{
+    font-size: 65px;
+    margin-top: 65px;
+}
+.hero-text p{
+    margin: 0px auto;/* alttan üstten 20 px sağdan soldan auto */
+    font-size: 37px;
+}
+/* slogan end */
+
+/* index-footer start */
+.index-footer {
+    background-color: #2c3e50; 
+    color: #ecf0f1; 
+    padding: 20px 0; /* İç boşluk (üstte ve altta 20px) */
+    text-align: center; /* Metni ortaya hizala */
+    font-family: Arial, sans-serif; 
+    width: 100%; /* Sayfa genişliğinin tamamını kapla */
+    position: fixed; /*   Footer'ı sayfanın en altına sabitlemek istersen fixed, akışta kalsın istersen static/relative */
+    bottom: 0;
+    /* margin:auto; */
+}
+.index-footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+/* index-footer end */
+
+/* dark mode start */
+.navbar.active{
+    background-color: rgb(46, 22, 55);
+}
+.toggle.active{
+    background-color: black;/* dark mode a geçince mode değiştir butonu arka planı siyah olsun */
+}
+.toggle-ball.active{
+    background-color: white;/* dark mode a geçince top beyaz olsun */
+    transform: translateX(-20px);/* dark mode a geçince top sola kaysın */
+}
+.index-body.active {
+   background-image: none;
+   background-image: url('img/londonsiyah.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.hero-text.active{
+    color:rgb(138, 24, 43);
+}
+/* active ile dark mode durumunu seçtik */
+/* dark mode end */
+/* index end */
+
+/* sign up start */
+.signup{
+    margin: 0;
+    padding: 0;
+    background-color:blueviolet ;
+    background-image: none;/* ana sayfada kullandığım arka plan burada olmasın */
+    min-height: 100vh; /* Ekran yüksekliğinin tamamı kadar minimum yükseklik */
+    display: flex; /* Flexbox etkinleştirme */
+    flex-direction: column; /* Öğeleri dikey sırada hizalama (Navbar, İçerik, Footer) */
+    justify-content: center; /* Dikeyde ortala */
+    align-items: center; /* Yatayda ortala */
+    /* Navbar fixed olduğu için üst kısmın altında kalmasın diye padding veriyoruz */
+    padding-top: 60px; 
+    /* Footer fixed olduğu için altta kalmasın diye padding veriyoruz */
+    padding-bottom: 60px;
+}
+.signup-form{
+    width: 300px;
+    padding: 20px;/* kenarlardan boşluk bıraktık */
+    text-align: center;/* ortala */
+    background: url(img/kutucuk.jpg);
+    background-size: cover;
+    overflow: hidden;/* taşmaları engeller */
+}
+.signup-form h1{
+    margin-top: 40px;/* yukarıyla arasını 40px açtık */
+    margin-bottom: 20px;/* aşağıyla arasını 20px açtık */
+    color: white;
+    font-size: 40px;
+}
+.signup-form input{
+    display: block;/* kutucukları alt alta hizalar */
+    width: 100%;
+    padding: 0 16px;/* üstten alttan 0,sağdan soldan 16px boşluk */
+    height: 44px;
+    text-align: center;/* yazılar ortalnadı */
+    box-sizing: border-box;/* bütün kutular eşit hizaya geldi */
+    border: none;/* kenarlardaki çizgileri kaldırdık */
+}
+.txt{
+    margin: 20px 0;/* kutucukların arası boşluk 20px oldu */
+    border-radius: 10px;/* kutucukları ovalleştir */
+}
+.signup-btn{
+    margin-top: 40px;/* sadece yukarıdekinden uzaklaşır */
+    margin-bottom: 20px;/* sadece alttakinden uzaklaşır */
+    background-color: rgb(235, 124, 166);
+    color: #000;/* yazının rengini değiştirdik */
+    border-radius: 44px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s; /* Animasyon süresi */
+}
+.signup-btn:hover{
+    transform: scale(0.96);/* üzerine tıklayınca bir tık kuculur */
+    background: #fff;/* üzerine tıklayınca rengi beyaz olur*/
+}
+.signup-form a{
+    text-decoration: none;/* alttaki çizgiyi kaldırıdk */
+    color:black;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.4); /* Linkin arkasına hafif beyazlık */
+    border-radius: 5px;
+}
+.signup-form a:hover{
+    color:rgb(128, 122, 201);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* dark mode uyumu */
+.signup.active{
+    background-image: none;
+    background-color: #5f0e67;
+}
+.signup-form h1.active{
+    color: #390f3d;
+}
+/* sign up end */
+
+/* cards start */
+.main-header{
+    text-align: center; /* Başlığı yatayda ortalar */
+    width: 100%; /* Sayfanın tamamını kaplar */
+    margin: 80px auto 20px auto;
+    /*- Üstten (Top): 80px (Menüyü atlar).- Sağdan (Right): auto (Ortalamaya yardımcı olur).*/
+    /* - Alttan (Bottom): 20px (Kartlardan ayırır, eski margin-bottom değeri).- Soldan (Left): auto (Ortalamaya yardımcı olur) */
+    padding: 20px 40px; /* kenarlığın içindeki boşluk */
+    box-sizing: border-box;
+    display: inline-block;
+}
+.main-header h1 {
+    font-size: 2.8em; /* Başlık metnini büyütür */
+    color: #7d1e61; 
+    margin: 0;
+    text-transform: uppercase; /* Tüm harfleri büyük yapar */
+    background-color: #021233;
+    border: none;
+    letter-spacing: 2px; /* Harfler arasında boşluk bırakır */
+    border-radius: 10px;
+    border-color: #0a8ecb;
+}
+.level-buttons-container{
+    text-align: center; /* İçindeki metinleri ve inline/inline-block elemanları ortalar */
+    width: 100%; /* Sayfanın tamamını kaplamasını sağlar */
+    padding: 40px 0; /* Üstte ve altta boşluk bırakır */
+    margin-top: 30px; /* Kartlar ile arasında boşluk bırakır */
+}
+.level-button{
+    background-color: #5A67D8; /* Buton rengi (mor/mavi) */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Buton iç boşluğu */
+    margin: 10px; /* Butonlar arası boşluk */
+    cursor: pointer; /* Fare imlecini el şekline getirir */
+    border-radius: 8px; /* Köşeleri yuvarlar */
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Renk değişimini yumuşatır */
+}
+
+/* seviye kartları start */
+.level-button:hover {
+    background-color: #434190;
+}
+.word{
+    background-image: none;/* varsayılan arka planı bu sayfa için kaldırır */
+    display: flex;
+    flex-direction: row;/* yan yana sıralar */
+    flex-wrap: wrap;/* sığmadığında alt satıra geçer */
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#3b142c,#bd9dad);/* ikili arka plan rengi */
+    background-attachment: fixed;/* arka planı sabitledik */
+}
+.card-container{
+    perspective: 1000px;/* 3D derinlik hissi verir */
+}
+.card{/* Kartın Kendisi */
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;/* 3D dönüşü koru */
+    transition: transform 1.2s;/* kartın dönme süresi */
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.card.flipped {
+    transform: rotateY(180deg);/* Kartı Y ekseninde ters çevir (js ile eklenir)*/
+}
+.front,.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;/* arkada yazan yazı görnünmesin */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.front{
+    background-color: #8e8d8e;
+    transform: rotateY(0deg);/* arkaya cevir */
+}
+.back{
+    background-color: #8e8d8e;
+    transform: rotateY(180deg);/* öne cevir */
+}
+
+/* Bu butonları 'absolute' ile köşelere sabitledik */
+.voice-link{
+    position: absolute;/* kartın neresinde durmasını istiyorsak orada durur */
+    top: 10px;/* dinle  butonu sol üstte */
+    left: 10px;
+    background-color: rgb(235, 124, 166);
+    color: #000;
+    border-radius: 44px;
+    cursor: pointer;
+    display: block;
+    z-index: 10; /* Yazının üstünde kalsın */
+}
+.voice-link:hover{
+    transform: scale(0.96);/* üzerine tıklayınca bir tık kuculur */
+    background: #fff;/* üzerine tıklayınca rengi beyaz olur*/
+}
+.card-link{
+    position: absolute;/* kartın neresinde durmasını istiyorsak orada durur */
+    bottom: 10px;/* öğrendim butonu sağ altta */
+    right: 10px;
+    background-color: rgb(235, 124, 166);
+    color: #000;
+    border-radius: 44px;
+    cursor: pointer;
+    display: block;
+    z-index: 10; /* Yazının üstünde kalsın */
+}
+.card-link:hover{
+    transform: scale(0.96);/* üzerine tıklayınca bir tık kuculur */
+    background: #fff;/* üzerine tıklayınca rengi beyaz olur*/
+}
+.kart-content{
+    /* Navbar'ın yüksekliği*/
+    margin-top: 50px; 
+    /* butonlarla footer arası uzaklık */
+    padding-top: 10px;
+    margin-bottom: 450px;
+    flex-grow: 1; /* Sticky Footer için zorunlu olan stil */
+}
+/* cards footer start(yeni kelime ekle kısmı) */
+.kart-footer {
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px 20px;
+    background-color: #22496b; /* Koyu arka plan */
+    color: #ffffff; /* Beyaz yazı rengi */
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.kelime_ekle {
+    display: inline-block;
+    background-color: #007bff; /* Mavi düğme rengi */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;/* yumuşak geçiş */
+}
+.kelime_ekle:hover {
+    background-color: #0056b3; /* Üzerine gelince koyu mavi */
+}
+/* cards footer end */
+/* dark mode uyumu */
+.word.active{
+    background-image: none;
+    background-color: #4a1f4a;
+}
+/* cards end */
+
+/* seviye belirleme testi start */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/* borderın genişliğini ve yükseliğini verebilmek için */
+    font-family: 'Poppins',sans-serif;
+}
+.seviye-body{
+    background: url(img/soruarkaplan.jpg) no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh; /* Ekran yüksekliğinin tamamı kadar minimum yükseklik */
+    display: flex; /* Flexbox etkinleştirme */
+    flex-direction: column; /* Öğeleri dikey sırada hizalama */
+    position: relative; /* İçindeki absolute elemanlar buna göre hizalanmasın diye */
+}
+.seviye-content{
+    flex-grow: 1; /* Kalan tüm boşluğu doldurarak altbilgiyi aşağıya iter */
+    position: relative; /* Absolute olan kutular burayı referans alabilir */
+}
+.start_button button{
+    font-size: 25px;
+    color: rgb(229, 85, 149);
+    padding: 15px 30px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(103, 22, 54);
+    background:white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Hafif gölge */
+}
+/* kurallar kutusu */
+.quiz{
+    width: 540px;
+    background: rgb(206, 163, 194);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease; /* Açılırken animasyonlu gelsin */
+}
+.quiz_baslik{
+    padding: 0 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.second_start{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;/* eksenin sonuna hizalar */
+}
+.second_start button{
+    color: rgb(229, 85, 149);
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(103, 22, 54);
+}
+.seviyekartlari {/* kelime kartlarına git butonu */
+    background-color:#605fab ;
+    color:white;
+    margin: 0 5px;
+    margin-top: 7px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(103, 22, 54);
+}
+.seviyekartlari:hover{
+    background-color: #550955;
+}
+.quiz_box{
+    width: 550px;
+    background: #ce5ba4;
+    border-radius: 5px;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    pointer-events: none;/* sadece tıklanabilir yerlere tıklansın */
+}
+.quiz_box header{
+    position: relative;
+    height: 70px;
+    padding: 0 30px;
+    background: #b143c9;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content:space-between; /* Başlık sola, sayaç sağa */ 
+}
+.quiz_box header .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+.quiz_box header .timer{
+    color: #000;
+    background: #f1f1f1;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold
+}
+.saniye{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #000;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+}
+.seviye-section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+.seviye-section .soru_text{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.seviye-section .option_list .option{
+    background: #bd9dad;
+    border: 1px solid #7995bc;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+.seviye-section .option_list .option:hover {
+    background: #a88a99; /* Hover rengi */
+}
+.seviye-section .option_list .option.correct{
+    color: rgb(36, 131, 74);/* cevap dogruysa yeşil yanar */
+    background: #c7c7c7;
+}
+.seviye-section .option_list .option.incorrect{
+    color: rgb(228, 24, 24);/* cevap yanlışsa kırmızı yanar */
+    background: #c7c7c7;
+}
+.seviye-footer{
+    height:60px ;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Soru sayısı solda, buton sağda */
+}
+.seviye-footer .toplam_soru span{
+    display: flex;
+}
+.seviye-footer button{
+    opacity: 0;
+}
+.result_box{
+    background: #b99bd3;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;/* alt alta yazdırır */
+    justify-content: center;
+    opacity: 0;/* bir süre sonra  kullanmicaz,kapanacak */
+    pointer-events: none;/* sadece tekrar butonuna basılınca çalışır */
+}
+.result_box .complete_text{
+    font-size: 20px;/* quiz bitti yazsının büyüklüğü */
+    font-weight: 500;
+}
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+}
+.result_box .second_start button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;/* dış çizgisi yok */
+    border-radius: 5px;
+    border: 1px solid blue;
+}
+.second_start button.started{
+    color: #fff;
+    background: #605fab;
+}
+.answer_image{
+    width: 400px;
+    height: 200px;
+}
+.start_button,
+.quiz,
+.quiz_box,
+.result_box{
+    position:absolute;/* istediğimiz yere koyarız */
+    top: 50%;/* Dikeyde ortala */
+    left: 50%;/* yatayda ortala */
+    transform: translate(-50%,-50%);/* Tam merkeze oturt */
+    z-index: 5; /* Diğer içeriklerin üstünde olsun */
+}
+.quiz.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult{
+    opacity: 1;/* görünür yap */
+    pointer-events: auto;/* Tıklanabilir yap */
+    transform: translate(-50%, -50%) scale(1); /* Normal boyutuna getir */
+    z-index: 10;
+}
+/* dark mode uyumu */
+.seviye-body.active{
+    background-image: url(img/soruarkaplansiyah.png);
+}
+.start_button button.active{
+    color:#0b0443;
+    background: #ddd;
+}
+.quiz_box.active{
+    background: #5a0657;
+    
+}
+.quiz_box header.active{
+    background: #3e033b;
+}
+.result_box.active{
+    background: #3e2741;
+    color: white;
+}
+.quiz.active{
+    background-color: #7f275b;
+}
+/* seviye belirleme testi end */
+
+/* hakkımızda start */
+.hakkimizda-body{
+    background-color: #e1b0c1;
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans',sans-serif;
+    box-sizing: border-box;
+}
+.about{
+    width: 100%;
+    /* height: 930px; */
+    padding-top: 70px;/* Navbar'ın altında kalmaması için üst boşluk */
+    padding-bottom: 120px;/* içeriğin footer arkasında kalmaması için ekstra iç boşluk ekledik. */
+}
+.about img{
+    height: 350px;
+    width: 450px;
+    object-fit: cover;/* resmin boyutu değişmesin diye */
+}
+.about_text{
+    margin-left: 30px;/* Resim ile metin arasındaki boşluk */
+}
+.main{
+    width: 1130px;
+    max-width: 95%;max-width: 95%; /* Mobil uyumluluk için maksimum genişlik */
+    margin: 0 auto;/* Bloğu sayfada ortalar */
+    display: flex;/* yan yana getiridk */
+    align-items: center;/* dikeyde ortaladık */
+    justify-content: space-around;/* Elemanlar arasına eşit boşluk dağıtır */
+}
+.about_text h1{
+    color: #4d185d;
+    font-size: 60px;
+    text-transform: capitalize;/* ilk harfleri büyütür */
+    margin-bottom: 20px;/* alttakinden uzaklaştık */
+}
+.about_text h4{
+    color: #4d185d;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    letter-spacing: 1px;/* harfler arası boşluk */
+}
+.about_text p{
+    color: #2f2b2b;
+    line-height: 20px;/* Satır yüksekliği (okunabilirlik için) */
+    font-size: 17px;
+    margin-bottom: 15px;/* Paragraflar arası boşluk */
+}
+.about_text button{
+    background: #19409d;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;/* Başlangıçta kenarlık yok */
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s; /* Hover efektinin geçiş süresi */ 
+}
+.about_text button:hover{
+    background: transparent;/* üzerine gelindiğinde saydam olur */
+    border: 2px solid rgb(139, 50, 118);
+    cursor: pointer;/* Fare imlecini el işaretine çevir */
+    color: rgb(139, 50, 118); /* Yazı rengini de kenarlıkla uyumlu yap*/
+}
+/* dark mode uyumu */
+.hakkimizda-body.active{
+    background-image: none;
+    background-color: #21064b;
+}
+.about_text p.active{
+    color: #e0e0e0;
+}
+.about_text button.active{
+    background: rgb(56, 3, 56);
+    border: 1px solid white; /* Görünürlük için ince bir kenarlık ekledik */
+}
+.about_text h1.active{
+    color: #d68fcb;
+}
+.about_text h4.active{
+    color: #d68fcb;
+}
+/* hakkımızda end */
+
+/* iletişim start */
+.iletisim-body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;/* Sayfa en az ekran boyu kadar olsun */
+    display: flex;/* Flexbox modelini etkinleştir */
+    flex-direction: column;/* Öğeleri dikey olarak düzenle (Navbar, İçerik, Footer sırasıyla) */
+}
+.iletisim-container {
+    margin-top: 120px !important;/* menüyle içerik arsındaki boşluk(diğerlerinde etklienemsin diye important koyduk) */
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 100px auto;/* 100px margin-bottom vererek kutunun footer'a yapışmasını engelledik. */
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);/* hafif bir gölge verdik */
+    padding-bottom: 50px; /* Altbilgi ile üst içerik arasında boşluk */
+}
+.iletisim-title {
+    text-align: center;/* yazıları linkleri ikonları resimleri yatayda ortalar */
+    color: #333;
+    margin-bottom: 25px;
+}
+.iletisim-info {
+    margin-bottom: 20px;
+    line-height: 1.6;/* satırlar arası boşluğu arttırdık */
+}
+.iletisim-info p {
+    font-size: 16px;
+}
+.iletisim-form {
+    display: flex;
+    flex-direction: column;/* Inputları alt alta diz */
+}
+.iletisim-form input,
+.iletisim-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box; /* Padding eklenince kutu taşmasın diye */
+}
+.iletisim-btn {
+    background: #ff8ab8;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.iletisim-btn:hover {
+    background: #ff6fa3;
+}
+.social {
+    margin-top: 25px;
+    text-align: center;
+}
+.social a {
+    margin: 0 10px;
+    text-decoration: none;/* linklerde alttaki çizgiiy kaldıırır */
+    font-size: 20px;
+    color: #ff6fa3;
+}
+/* dark mode uyumu */
+.iletisim-body.active{
+    background-image: none;
+    background-color: #350541;
+}
+.iletisim-container.active{
+    background: #252f3a;
+}
+.iletisim-title.active{
+    color: #c1d0d2;
+}
+.iletisim-btn.active{
+    background: #510637;
+}
+/* iletişim end */
+
+/* quizler start */
+.quiz-body{
+    background-color: #605fab;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;/* dikey ve yatay olarak ortaladık */
+    min-height: 100vh;/* sayfa yüksekliğini tarayıcı penceresinin tamamı kadar yapar.*/
+    margin: 0;/* tarayıcı kenarlarıdaki boşlukları sıfırlar */
+    padding: 20px;/* sayfa etrafında iç boşluk bırakır */
+}
+.mainquiz-content {
+    margin-top: 100px;/* Navbar'ın yüksekliği*/
+    flex-grow: 1; /* Sticky Footer için zorunlu olan stil */
+}
+.button-container{
+    display: flex;/* kutu şeklinde düzenler */
+    gap: 15px;/* butonlar arası boşluk */
+    margin-bottom: 30px;/* butonların aşağıya olan mesafesi */
+}
+.quiz-button{
+    background-color: rgb(182, 93, 170);
+    border: none;/* çevresindeki çizgiyi kaldırır */
+    border-radius: 10px;/* köşeleri yuvarlaklaştırır */
+    padding: 15px 30px;/* butonun iç boşluklarını ayarlar */
+    font-size: 1.1em;/* yazı boyutunu normalden %10 daha fazla yapar */
+    font-weight: bold;/* yazıyı kalınlaştırır */
+    color: #021233;/* yazı rengi */
+    cursor: pointer;/* üzerine gelince tıklanabilir oldu */
+}
+.quiz-button:hover{
+    background-color: #cbb9cf;/* üzerine gelince rengi değişir */
+    transform: translateY(-4px);/* üzerine gelince buton hafifçe yukarı kalkar */
+}
+.quiz-button:active{/* butona tıklandıktan sonra olacaklar */
+    transform: translateY(0);/* butona tıklandıktan sonra eski yerine geri döner*/
+}
+/* quiz alanı özellikleri */
+#quiz-container{/*  # ile htmldeki idler csste düzenlenir */
+    background-color:rgb(172, 160, 160);
+    color: #550955;
+    padding: 30px;/* iç boşluk ekledik */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;/* Genişliği ayarlar (küçük ekranlarda %90, büyük ekranlarda en fazla 500px). */
+    text-align: center;/* metinleri ortay hizalar */
+    /* İçeriklerin dikey olarak sıralanmasını sağlar (JS ile gösterilir). */
+    display: none;/* butonlara tıklandıktan sonra gösterilecek */
+    flex-direction: column;
+    gap: 20px;/* iç elemnetler arası boşluk */
+}
+/* Soru Metni özellikleri */
+#question-text {
+    font-size: 1.3em;/* Yazı boyutunu büyütür. */
+    color:black;/* Yazı rengi */
+    margin-bottom: 25px;/* Altında boşluk bırakır. */
+}
+#timer {
+    font-size: 1.1em;/* Yazı boyutunu büyütür. */
+    font-weight: bold;/* Yazıyı kalın yapar. */
+    color: #e91e63; 
+    margin-bottom: 15px;
+}
+#answers {
+    display: flex;/* İçindeki butonların dikey olarak sıralanmasını sağlar. */
+    flex-direction: column;
+    gap: 10px; /* Butonlar arasında 10 piksel boşluk bırakır. */
+}
+.answer-button{/* js dosyaında ortaya çıkacak */
+    padding: 12px;/* İç boşluk ekler. */
+    border: 1px solid #ccc;/* İnce bir kenarlık ekler. */
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1em;/* Yazı boyutunu normal yapar. */
+    cursor: pointer;/* Fare imlecini el işaretine dönüştürür. */
+    border-radius: 10px;
+    transition: background-color 0.2s, border-color 0.2s;/* Geçiş efektlerini ayarlar. */
+    width: 100%;/* tam genişliğini kaplamasını sağlar. */
+}
+.answer-button:hover {/* cevap butonunun üzerine gelindiğinde */
+    background-color: #e0f7fa; /* arka plan değişir */
+    border-color: #00bcd4;/* Kenarlık rengini değiştirir. */
+}
+/* sonuç kısmı */
+#result-area h3{
+    color:#9c2860;
+    margin-bottom: 15px;
+}
+#result-area button{/* başa dön butonu */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;/* Üstünde boşluk bırakır. */
+    width: 180px;  /* 100px → 180px */
+    height: 65px;
+}
+ .result-buttons {
+    display: flex;
+    justify-content: center; /* Ortala */
+    align-items: center;
+    gap: 20px; /* Butonlar arası boşluk */
+    margin-top: 30px;
+    flex-direction: column;/* alt alta sıraladık */
+}
+.seviyekartlari {
+    width: 180px;  /* 100px → 180px */
+    height: 65px;
+}
+/* dark mode uyumu */
+.quiz-body.active{
+    background-image: none;
+    background-color: #1d0d40;
+}
+/* quizler end */
+
+/* resim galerisi start */
+.resim-body{
+    background-color: #7c447d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Küçük resimler */
+.gallery-container {
+    display: grid;/* Galeri Izgarası (Grid) */
+    /* Responsive (Duyarlı) Izgara: Ekran boyutuna göre sütun sayısını otomatik ayarlar */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;/* Resimler arası boşluk */
+    padding: 30px;
+    margin-top: 80px;/* menüyle arasında boşluk */
+    margin-bottom: 50px; /* Footer'dan kurtarmak için boşluk */
+}
+.gallery-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;/* Resmi kutuya sığdırır, orantıyı bozmaz */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+/* Tıklayınca açılan büyük resim (popup) */
+.image-popup {
+    display: none;
+    position: fixed;
+    z-index: 3000;/* resim büyür ön planda görünür */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.9);/* Arka planı karart */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Arka planı buzlu cam gibi yap */
+}
+.image-popup img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px black;
+}
+
+/* Kapatma Butonu */
+.close-popup {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+.close-popup:hover {
+    color: #ff4757; /* Üzerine gelince kırmızı olsun */
+}
+/* dark mode uyumu */
+.resim-body.active{
+    background-image: none;
+    background-color: #000;
+}
+/* resim galerisi end */
+
+/* oyunlar start */
+.oyunlar-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Tüm ekranı kapla */
+    margin: 0;
+    background-color: #f4f4f4; 
+}
+.games-container {
+    flex: 1; /* Navbar ve Footer arasındaki tüm boşluğu kapla */
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    padding: 20px;
+}
+.games-wrapper {
+    display: flex;
+    gap: 40px; /* İki buton arasındaki boşluk */
+    flex-wrap: wrap; /* Mobilde alt alta geçmesini sağlar */
+    justify-content: center;
+}
+/* 3. Oyun Kartlarının Tasarımı */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    text-decoration: none; /* Link alt çizgisini kaldır */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Hover (Üzerine gelince) Efektleri */
+.game-card:hover {
+    transform: translateY(-10px); /* Yukarı doğru hafif zıplama */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+/* İkon ve Yazı Stilleri */
+.game-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    color: #4CAF50; 
+}
+.game-card h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.game-card p {
+    font-size: 14px;
+    color: #666;
+}
+/* Butonlara özel renkler */
+.match-game .game-icon { color: #ff6b6b; } 
+.audio-game .game-icon { color: #4ecdc4; } 
+/* Dark Mode Uyumu  */
+.oyunlar-body.active {
+    background-color: #1a1a1a;
+}
+.oyunlar-body.active .game-card {
+    background-color: #2d2d2d;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.oyunlar-body.active .game-card p {
+    color: #bbb;
+}
+/* oyunlar end */
+
+/* eslestirme oyunu start */
+.eslestirme-body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Tüm ekranı kapla */
+    margin: 0;
+    background-color: #f4f4f4; 
+}
+/* Oyun Alanı Düzeni */
+.memory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Ekranı doldurması için */
+    padding: 20px;
+}
+/* Üst Bilgi Çubuğu */
+.game-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(247, 165, 222);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.stats {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+.status-msg {
+    font-weight: bold;
+    color: #555;
+}
+.restart-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1b1d74;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+.restart-btn:hover {
+    background-color: #4b6aa3;
+}
+/* Kart Yapısı */
+.memory-game {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Sütunlu yapı */
+    gap: 15px;
+}
+/* Kartın Kendisi (Sahne) */
+.memory-card {
+    position: relative;
+    height: 120px; /* Kart Yüksekliği */
+    cursor: pointer;
+    transform-style: preserve-3d; /* 3D dönüş için gerekli */
+    transition: transform 0.5s;
+}
+/* Tıklanınca veya Eşleşince Dönme Efekti */
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+/* Kart Ön ve Arka Yüzleri */
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Arkası dönükken görünmesin */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 5px;
+}
+/* Ön Yüz (Kelimenin yazdığı yüz) */
+.front-face {
+    background-color: #ffffff;
+    color: #333;
+    transform: rotateY(180deg); /* Başlangıçta arkada olsun */
+    border: 2px solid #744caf;
+}
+/* Arka Yüz (Soru işareti veya logo olan yüz) */
+.back-face {
+    background-color: #62035c;
+    color: rgb(191, 32, 98);
+    font-size: 2rem;
+}
+/* Dark Mode Uyumu */
+.eslestirme-body.active{
+    background-color: #000;
+}
+.eslestirme-body.active .game-info-bar {
+    background-color: #333;
+    color: white;
+}
+.eslestirme-body.active .stats { color: white; }
+.eslestirme-body.active .front-face {
+    background-color: #444;
+    color: white;
+    border-color: #9b4caf;
+}
+.eslestirme-body.active .restart-btn { background-color: #2e50cc; }
+/* eslestirme oyunu end*/
+
+/* ses oyunu start */
+.ses-body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+.ses-body.active{
+    background: #4a023d;
+}
+.game-wrapper {
+    margin-top: 100px;
+    margin-bottom: 50px; /* Footer'a yapışmasın */
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Diğer elementlerin üstünde dursun */
+}
+/* dark mode uyumu */
+.game-wrapper.active{
+    background-color: #062c3d;
+}
+.ses-h1 {
+    color: #333;
+    margin-bottom: 5px;
+}
+.ses-h1.active{
+    color: #b7b3b3;
+}
+.ses-p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+.score-tablosu {
+    background: #f0f2f5;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+/* Hoparlör Butonu Tasarımı */
+.speak-btn {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+    transition: transform 0.2s, background 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.speak-btn span {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: normal;
+}
+.speak-btn:hover {
+    background: #5b4cc4;
+    transform: scale(1.05);
+}
+.speak-btn:active {
+    transform: scale(0.95);
+}
+.hint-text {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.ses-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+.ses-input:focus {
+    border-color: #6c5ce7;
+}
+/* Genel Buton Stilleri */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.check-btn {
+    padding: 12px 20px;
+    background-color: #2d3436;
+    color: white;
+}
+.check-btn:hover {
+    background-color: #000;
+}
+/* Next Butonu (ID ile stil veriyoruz) */
+#next-btn {
+    padding: 12px 20px;
+    background-color: #00b894;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+#next-btn:hover {
+    background-color: #00a884;
+}
+/*  hidden-btn sınıfı (Gizleme işlemi için) */
+.hidden-btn {
+    display: none;
+}
+#message {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.correct { color: #00b894; }
+.wrong { color: #d63031; }
+.sub-info {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+/* ses oyunu end */
+
+/* kelime ekle start */
+.addword-body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    /* Dikey ve Yatay ortalama Flexbox ile sağlanıyor */
+    justify-content: center;
+    align-items: center;
+    
+}
+/* Ana Kart Tasarımı */
+.kelimeekle-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 80px; 
+    margin-bottom: 50px; /* Footer ile çakışmasın diye */
+}
+header h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+header p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+/* Form Elemanları */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Padding taşmasını engeller */
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+.word-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c0a73;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.word-button:hover {
+    background-color: #c269df;
+}
+/* dark mode uyumu */
+.word-button:active {
+    transform: scale(0.98);/* Basılınca hafif küçülme efekti */
+}
+.addword-body.active{
+    background-color: #000;
+}
+.addword-body.active .kelimeekle-container {
+    background-color: #1e1e1e; /* Kartın arka planı koyu gri olsun */
+    color: #ffffff; /* Genel yazı rengi beyaz olsun */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05); /* Gölgeyi hafif beyaz yapalım */
+}
+.addword-body.active header h1 {
+    color: #ffffff; /* Başlık beyaz */
+}
+.addword-body.active header p {
+    color: #bbbbbb; /* Alt açıklama açık gri */
+}
+.addword-body.active .form-group label {
+    color: #dddddd;
+}
+.addword-body.active .form-group input {
+    background-color: #2c2c2c; /* Input içi koyu */
+    border-color: #444;       /* Kenarlık koyu gri */
+    color: #fff;              /* Yazılan yazı beyaz */
+}
+.addword-body.active .form-group input:focus {
+    border-color: #c269df; /* Odaklanınca  mor renk olsun */
+}
+/* kelime ekle end */
+
+/* hesabim start */
+.profile-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4; 
+    margin: 0;
+    padding: 20px;
+}
+.hesap-container {
+   max-width: 800px; /* İçerik çok yayılmasın, derli toplu dursun */
+   margin: 60px auto 80px auto;
+   
+}
+/* --- Profil Kartı (Üst Kısım) --- */
+.profile-header {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px; /* Köşeleri yuvarlatır */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Hafif gölge efekti */
+}
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Resmi tam daire yapar */
+    object-fit: cover; /* Resim bozulmadan çerçeveye sığar */
+    margin-bottom: 15px;
+    border: 3px solid rgb(199, 33, 61); /* Resmin etrafına tema renginde çerçeve */
+}
+.profile-header h1 {
+    color: rgb(199, 33, 61); 
+    margin: 10px 0;
+}
+.profile-header p {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+/* --- İstatistik Kutuları --- */
+.stats-container {
+    display: flex; /* Kutuları yan yana dizer */
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px; /* Kutular arası boşluk */
+}
+.stat-box {
+    background: white;
+    flex: 1; /* Kutuların eşit genişlikte olmasını sağlar */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.stat-box h3 {
+    margin: 10px 0 0 0;
+    font-size: 2rem;
+    color: #333;
+}
+.stat-box span {
+    color: #888;
+    font-size: 0.9rem;
+}
+/* --- Butonlar --- */
+.actions {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* İki sütunlu yapı */
+    gap: 20px;
+}
+.btn-action {
+    display: block;
+    padding: 15px;
+    background-color: rgb(199, 33, 61);
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Link altındaki çizgiyi siler */
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s; /* Renk değişimini yumuşatır */
+}
+.btn-action:hover {
+    background-color: rgb(160, 25, 48); /* Mouse üzerine gelince koyulaşır */
+}
+/* Çıkış butonu */
+.btn-logout {
+    background-color: #333;
+    margin-top: 20px;
+    grid-column: span 2; /* Tüm genişliği kaplamasını sağlar */
+}
+.btn-logout:hover {
+    background-color: #000;
+}
+/* dark mode uyumu */
+.profile-body.active{
+    background-color: #622222;
+}
+.profile-header.active{
+    background-color: #746868;
+}
+.profile-header p.active{
+    color: #000;
+}
+/* hesabim end */
+
+/* ogrenilen kelimeler start */
+.ogrendim-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfa yüksekliği en az ekran boyu kadar olsun */
+    margin: 0; /* Tarayıcı varsayılan boşluklarını sıfırla */
+}
+#learned-wrapper {
+    flex: 1; /* Bu özellik, footer'ı aşağı itmek için boş alanı kaplamasını sağlar */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+/* Eğer hiç kelime yoksa çıkacak uyarı yazısı */
+.empty-message {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    font-weight: bold;
+}
+/* Sayfa başlığı ortalama */
+.main-header h1 {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* dark mode uyumu */
+.ogrendim-body.active{
+    background-color: #511253;
+}
+/* ogrenilen kelimeler end */

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seviyeni Belirle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/travel.png" type="image/x-icon">
+</head>
+<body class="seviye-body">
+    <!--navbar start-->
+    <div class="navbar">
+        <div class="navbar-wrapper">
+            <div class="logo-wrapper">
+                <h1 class="logo">WORDIFY</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">
+                        <a href="index.html">Ana Sayfa</a></li>
+                    <li class="menu-list-item">
+                        <a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li class="menu-list-item">
+                        <a href="iletisim.html">İletişim</a></li>
+                    <li class="menu-list-item">
+                        <a href="girisyap.html">Giriş yap/Üye ol</a></li>
+                    <li class="menu-list-item">
+                        <a href="seviye.html">Seviyeni Belirle</a></li>
+                    <li class="menu-list-item">
+                        <a href="quiz.html">Quizler</a></li>
+                    <li class="menu-list-item">
+                        <a href="kartlar.html">Kelime Kartları</a></li>
+                    <li class="menu-list-item">
+                        <a href="kelimeekle.html">Kelime Ekle</a></li>
+                    <li class="menu-list-item">
+                        <a href="oyunlar.html">Oyunlar</a></li>
+                    <li class="menu-list-item">
+                        <a href="resimgalerisi.html">Resimler</a></li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profil fotoğrafı.jpg"><!-- pp eklenecek -->
+                <div class="profile-text-container">
+                    <span class="profile-text"><a href="hesabim.html">Hesabım</a></span>
+                    <i class="bi bi-caret-down-fill"></i>
+                </div>
+                <div class="toggle">
+                    <i class="bi bi-moon-stars toggle-icon"></i><!--dark mode-->
+                    <i class="bi bi-brightness-high-fill toggle-icon"></i><!--light mode-->
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--navbar end-->
+    <div class="seviye-content">
+<!--start quiz button-->
+    <div class="start_button"><button>Teste Başla</button></div>
+<!--kurallar-->
+<div class="quiz">
+    <div class="quiz_baslik"><span>Quiz Kuralları:</span></div>
+    <div class="quiz_rule">
+        <div class="">1. Her soru için 20 saniyeniz vardır.</div>
+        <div class="">2. Süre bittikten sonra işaretleme yapamazsınız.</div>
+        <div class="">3. Doğru sayınız test sonunda yazacaktır.</div>
+        <div class="">4. Doğru sayınıza göre seviyeniz ekranda yazacaktır.</div>
+    </div>
+    <div class="second_start">
+        <button class="started">Başla</button>
+    </div>
+</div>
+<!--quiz box-->
+    <div class="quiz_box">
+        <header>
+            <div class="title">İngilizce Seviye Belirleme Testi</div>
+            <div class="timer">
+                <div class="">Kalan Süre:</div>
+                <div class="saniye">20</div>
+            </div>
+        </header>
+        <section class="seviye-section">
+            <div class="soru_text"></div>
+            <div class="option_list"></div>
+        </section>
+<!--footer-->
+        <footer class="seviye-footer">
+            <div class="toplam_soru"></div><!--sorunun altında bulunur -->
+            <button class="next_btn"></button>
+        </footer>
+    </div>
+</div>
+    <!--footer start-->
+    <footer class="index-footer">
+        <p>© 2025 Wordify. Tüm Hakları Saklıdır.</p>
+    </footer>
+    <!--footer end-->
+<!--result box-->
+<div class="result_box">
+    <div class="complete_text">Testi tamamladınız.</div>
+    <div class="score_text"></div>
+    <div class="level_text"></div>
+    <div class="second_start">
+        <button class="started">Tekrar</button>
+    </div>
+    <button class="seviyekartlari" onclick="kartlar()">Kelime kartlarına git</button>
+    </div>
+    <script>
+        function kartlar(){
+            window.location.href="kartlar.html"
+        }
+    </script>
+    <script src="soru.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!--dark mode start-->
+<script>
+    const ball = document.querySelector(".toggle-ball");
+    // .quiz_box, .quiz, .result_box gibi dinamik elemanları da seçiyoruz
+    const items = document.querySelectorAll(".seviye-body,.start_button button,.quiz_box,.quiz_box header,.result_box,.quiz, .navbar, .toggle, .toggle-ball");
+
+    // 1. ADIM: Sayfa yüklendiğinde daha önce bir seçim yapılmış mı kontrol et
+    const currentTheme = localStorage.getItem("theme");
+
+    // Eğer hafızada "dark" kayıtlıysa, sayfa açılır açılmaz active sınıfını ekle
+    if (currentTheme === "dark") {
+        items.forEach((item) => item.classList.add("active"));
+    }
+
+    // 2. ADIM: Butona tıklandığında ne olacağını belirle
+    ball.addEventListener("click", function () {
+        items.forEach((item) => item.classList.toggle("active"));
+
+        // Toggle işleminden sonra topun sınıfını kontrol et
+        // Eğer top "active" sınıfına sahipse, kullanıcı karanlık modu açmıştır.
+        if (ball.classList.contains("active")) {
+            localStorage.setItem("theme", "dark"); // Hafızaya "dark" yaz
+        } else {
+            localStorage.setItem("theme", "light"); // Hafızaya "light" yaz
+        }
+    });
+</script>
+<!--dark mode end-->

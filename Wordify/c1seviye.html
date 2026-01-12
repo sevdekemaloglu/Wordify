@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C1 Seviye Kelime Kartları</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/travel.png" type="image/x-icon">
+</head>
+<body class="word">
+    <!--navbar start-->
+    <div class="navbar">
+        <div class="navbar-wrapper">
+            <div class="logo-wrapper">
+                <h1 class="logo">WORDIFY</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">
+                        <a href="index.html">Ana Sayfa</a></li>
+                    <li class="menu-list-item">
+                        <a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li class="menu-list-item">
+                        <a href="iletisim.html">İletişim</a></li>
+                    <li class="menu-list-item">
+                        <a href="girisyap.html">Giriş yap/Üye ol</a></li>
+                    <li class="menu-list-item">
+                        <a href="seviye.html">Seviyeni Belirle</a></li>
+                    <li class="menu-list-item">
+                        <a href="quiz.html">Quizler</a></li>
+                    <li class="menu-list-item">
+                        <a href="kartlar.html">Kelime Kartları</a></li>
+                    <li class="menu-list-item">
+                        <a href="kelimeekle.html">Kelime Ekle</a></li>
+                    <li class="menu-list-item">
+                        <a href="oyunlar.html">Oyunlar</a></li>
+                    <li class="menu-list-item">
+                        <a href="resimgalerisi.html">Resimler</a></li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profil fotoğrafı.jpg"><!-- pp eklenecek -->
+                <div class="profile-text-container">
+                    <span class="profile-text"><a href="hesabim.html">Hesabım</a></span>
+                    <i class="bi bi-caret-down-fill"></i>
+                </div>
+                <div class="toggle">
+                    <i class="bi bi-moon-stars toggle-icon"></i><!--dark mode-->
+                    <i class="bi bi-brightness-high-fill toggle-icon"></i><!--light mode-->
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--navbar end-->
+    <header class="main-header">
+        <h1>C1 SEVİYE KELİME KARTLARI</h1>
+    </header>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Distinct</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Farklı</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Manner</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Tavır</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Resemble</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Benzemek</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Sustain</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Sürdürmek</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Incentive</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Teşvik</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link">
+                <p id="dinledim"></p>
+                <h2 class="card-title">Genuine</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Hakiki</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Exceed</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Aşmak</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Density</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Yoğunluk</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Convey</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">İletmek</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Breach</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">İhlal</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Adequate</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Yeterli</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Interval</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Aralık</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Permanent</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Kalıcı</h2>
+            </div>
+        </div>
+        </div>
+        <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Venture</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim(event,this)" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Girişim</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Savage</h2>
+                <div class="card-content">
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim()" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Vahşi</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Relevant</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim()" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">İlgili</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Evolve</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim()" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Gelişmek</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <input type="submit" value="Dinle" id="dinle" onclick="dinle(event,this)" class="voice-link"> 
+                <p id="dinledim"></p>
+                <h2 class="card-title">Opponent</h2>
+                <div class="card-content"> 
+                <input type="submit" value="Öğrendim" id="ogrendim" onclick="ogrendim()" class="card-link"> 
+                <p id="ogrendim"></p>
+            </div>
+            </div>
+            <div class="back">
+                <h2 class="card-title">Rakip</h2>
+            </div>
+        </div>
+    </div>
+    <footer class="kart-footer">
+        <p>Kendi kelimelerinizi ekleyin ve öğrenin !</p>
+        <a href="kelimeekle.html" class="kelime_ekle"><!--kelime ekle sayfasına yönlendirdik-->
+            <i class="bi bi-plus-square"></i>Yeni kelime ekle<!--+ ikonu ekledik-->
+        </a>
+    </footer>
+    <!--footer start-->
+    <footer class="index-footer">
+        <p>© 2025 Wordify. Tüm Hakları Saklıdır.</p>
+    </footer>
+    <!--footer end-->
+    </body>
+    </html>
+<script>
+function dinle(event,button){
+    event.stopPropagation(); // Kartın dönmesini engeller
+    const card = button.closest(".front"); //Tıklanan butonun en yakın .front sınıflı üst elemanını bul
+    const kelime = card.querySelector(".card-title").innerText;//Kartın içindeki İngilizce kelimeyi bulur
+
+    const utter = new SpeechSynthesisUtterance(kelime);//tarayıcıya “Bunu sesli oku” demenin yoludur.
+    utter.lang = "en-US"; // İngilizce telaffuz(amerikan ingilizcesi)
+    speechSynthesis.speak(utter);//Tarayıcıya, oluşturduğumuz sesi hemen çalmasını söyler.
+}
+function ogrendim(event, button) {
+    event.stopPropagation();
+
+    // 1. Kartın verilerini al (İngilizce ve Türkçe)
+    const card = button.closest(".card");
+    const enWord = card.querySelector(".front .card-title").innerText;
+    const trWord = card.querySelector(".back .card-title").innerText;
+
+    // 2. LocalStorage'dan mevcut listeyi çek
+    let learnedList = JSON.parse(localStorage.getItem('learnedWords')) || [];
+
+    // 3. Eğer bu kelime daha önce eklenmediyse listeye ekle
+    // (Aynı kelimeyi iki kere eklememek için kontrol ediyoruz)
+    const exists = learnedList.some(item => item.en === enWord);
+    if (!exists) {
+        learnedList.push({ en: enWord, tr: trWord });
+        localStorage.setItem('learnedWords', JSON.stringify(learnedList));
+    }
+
+    // 4. Kartı animasyonla veya direkt sil
+    card.style.display = "none"; 
+    alert("Kelime 'Öğrenilen Kelimeler' listesine eklendi.");
+}
+
+/* === Sayfa Yüklendiğinde Öğrenilenleri Gizle === */
+document.addEventListener("DOMContentLoaded", () => {
+    const learnedList = JSON.parse(localStorage.getItem('learnedWords')) || [];
+    
+    // Tüm kartları gez
+    document.querySelectorAll(".card").forEach(card => {
+        const enWord = card.querySelector(".front .card-title").innerText;
+        
+        // Eğer bu karttaki kelime listede varsa kartı gizle
+        if (learnedList.some(item => item.en === enWord)) {
+            card.style.display = "none";
+        }
+    });
+});
+
+/* === Kart Çevirme Efekti === */
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+    });
+});
+</script>
+<!--dark mode start-->
+<script>
+    const ball = document.querySelector(".toggle-ball");
+    // Buradaki seçiciler tüm sayfalarda ortak olmalı. 
+    const items = document.querySelectorAll(".word, .navbar, .toggle, .toggle-ball");
+
+    // 1. ADIM: Sayfa yüklendiğinde daha önce bir seçim yapılmış mı kontrol et
+    const currentTheme = localStorage.getItem("theme");
+
+    // Eğer hafızada "dark" kayıtlıysa, sayfa açılır açılmaz active sınıfını ekle
+    if (currentTheme === "dark") {
+        items.forEach((item) => item.classList.add("active"));
+    }
+
+    // 2. ADIM: Butona tıklandığında ne olacağını belirle
+    ball.addEventListener("click", function () {
+        items.forEach((item) => item.classList.toggle("active"));
+
+        // Toggle işleminden sonra topun sınıfını kontrol et
+        // Eğer top "active" sınıfına sahipse, kullanıcı karanlık modu açmıştır.
+        if (ball.classList.contains("active")) {
+            localStorage.setItem("theme", "dark"); // Hafızaya "dark" yaz
+        } else {
+            localStorage.setItem("theme", "light"); // Hafızaya "light" yaz
+        }
+    });
+</script>
+<!--dark mode end-->
